@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.www.mapper.AreaMapper">
+        <update id="update">
+            update area
+            <set>
+                <if test="area!=null">
+                    area=#{area},
+                </if>
+                <if test="address!=null">
+                    address=#{address},
+                </if>
+                <if test="image!=null">
+                    image=#{image},
+                </if>
+                <if test="introduction!=null">
+                    introduction=#{introduction}
+                </if>
+            </set>
+            <where>
+                id=#{id}
+            </where>
+    </update>
+</mapper>
